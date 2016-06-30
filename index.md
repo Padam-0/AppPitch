@@ -1,0 +1,85 @@
+---
+title       : Car Mileage Calculator
+subtitle    : Pitch Presentation
+author      : Peter Adam
+job         : Data Analyst
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [bootstrap, quiz]    # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Project Aim and Development
+
+People want to know what their cars mileage is, and how that ranks against other
+cars.
+
+This project aimed to build an application where a user can easily select the
+make and model of their car and see how it compares to the competition.
+
+The `mtcars` dataset includes mileage information on 32 cars, and this was the
+basis for the development of the app.
+
+The `radioButtons()` function was used for the manufacturer list, and then
+a series of radioButtons were embedded within `conditionalPanel()` functions, so
+that the options for model would appear per manufacturer selection.
+
+---
+
+## Project Development (cont.)
+
+Individual model mileage numbers were taken out of R using `[n,1]` where `n` is
+the car being selected. For example, the Cadillac Fleetwood:
+
+```r
+    row.names(mtcars[15,0])
+```
+
+```
+## [1] "Cadillac Fleetwood"
+```
+
+```r
+    mtcars[15,1]
+```
+
+```
+## [1] 10.4
+```
+
+The average was computed using `mean()`:
+
+
+```r
+    mean(mtcars$mpg)
+```
+
+```
+## [1] 20.09062
+```
+
+---
+
+## Final Product
+
+The final product is hosted at: https://padam0.shinyapps.io/shinyApp/
+The raw files are hosted at: https://github.com/Padam-0/shinyApp
+
+<img src = './assets/img/SS.jpg' height = 400></img>
+
+--- &radio
+
+## Feedback:
+What did you think of this pitch?
+
+1. _Good!_
+2. Bad :(
+
+*** .hint
+Be nice!
+
+*** .explanation
+Aw, I'm sorry you feel that way!
+
